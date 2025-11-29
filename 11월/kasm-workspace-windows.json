@@ -1,0 +1,23 @@
+{
+  "name": "windows test",
+  "description": "Windows 10 DaaS 데스크톱 인스턴스",
+  "image_type": "Server",
+  "connection_type": "rdp",
+  "server": {
+    "hostname": "192.168.0.107",
+    "port": 3389
+  },
+  "rdp_settings": {
+    "username": "Administrator",
+    "security": "any",
+    "ignore_cert": true
+  },
+  "display_settings": {
+    "resolution": "1920x1080",
+    "color_depth": 24
+  },
+  "session_settings": {
+    "idle_disconnect": 3600,
+    "allow_persistent_profile": true
+  }
+}
