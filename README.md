@@ -83,3 +83,26 @@ Windows 10와 Linux(Ubuntu 22.04, CentOS 7) 골든 이미지를 virt-manager를 
 VM 생성 시 디스크 인터페이스를 VirtIO Block, 네트워크 어댑터를 VirtIO NIC로 사전 설정한 후 부팅했습니다. Windows 설치 과정에서 VirtIO 드라이버 ISO를 마운트하여 가상 디스크와 네트워크를 인식시켰으며, 설치 완료 후 cloudbase-init과 sysprep을 통해 사용자별 초기 설정(이름, 비밀번호)이 가능하도록 이미지를 일반화했습니다.
 최종적으로 qcow2 포맷으로 변환하여 클라우드 환경에 최적화된 이미지를 생성했고, C/C++ 컴파일러, 개발 라이브러리, 네트워크 분석 도구 등 학교 실습 도구를 사전 포함했습니다.
 
+
+## **⚙️ 기술 스택**
+
+- 클라우드 플랫폼 : OpenStack
+- 가상화 기술 : KVM  하이퍼바이저, VirtIO 반가상화, QEMU
+- 게스트 OS: Window 10, Linux(CentOS, Ubuntu)
+- 화면 송출 : Kasm
+- 저장소 : Cinder, Glance
+
+
+
+## 📊 성과 및 결론
+
+!Openstack을 활용한 DaaS 서비스 구축.jpg
+<img alt="image" width="70%" src="https://github.com/user-attachments/assets/c770a382-dcab-480d-bb5e-57d6d03b0680" />
+
+
+
+- OpenStack Caracal 수동 설치를 통한 클라우드 인프라 구축 및 운영 경험
+- Windows/Linux 골든 이미지 제작 과정 습득 및 클라우드 이미지 최적화 기법 학습
+- 폐기 예정 서버 4대를 HCI 방식으로 재활용한 인프라 설계 경험
+
+
