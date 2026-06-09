@@ -101,7 +101,7 @@ VM 생성 시 디스크 인터페이스를 VirtIO Block, 네트워크 어댑터�
 OpenStack Neutron에서 할당한 사설 IP(192.168.0.x 대역)가상 데스크톱 내부에서도 정확히 매핑되어 동작하는 것을 확인했다.<br>
 별도 클라이언트 없이 HTML5 웹 브라우저만으로 접속하는 **Clientless DaaS** 구현 완료.<br>
 
-
+<br><br>
 <img width="565" height="317" alt="image" src="https://github.com/user-attachments/assets/36665a20-10a3-45f4-8499-e3f520cc8f0a" />
 <br>
 <br>- OpenStack Caracal 수동 설치를 통한 클라우드 인프라 구축 및 운영 경험
