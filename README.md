@@ -102,7 +102,7 @@ OpenStack Neutron에서 할당한 사설 IP(192.168.0.x 대역)가상 데스크�
 별도 클라이언트 없이 HTML5 웹 브라우저만으로 접속하는 **Clientless DaaS** 구현 완료.<br>
 
 
-<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/36665a20-10a3-45f4-8499-e3f520cc8f0a" />
+<img width="565" height="317" alt="image" src="https://github.com/user-attachments/assets/36665a20-10a3-45f4-8499-e3f520cc8f0a" />
 <br>
 <br>- OpenStack Caracal 수동 설치를 통한 클라우드 인프라 구축 및 운영 경험
 <br>- Windows/Linux 골든 이미지 제작 과정 습득 및 클라우드 이미지 최적화 기법 학습
