@@ -72,12 +72,10 @@ VM Pool을 통해 최종 Windows/Linux 데스크톱 환경을 제공합니다.
             
 - **이미지 패키징 작업**
             
-            
-  <img width="1007" height="702" alt="image" src="https://github.com/user-attachments/assets/7063cfd9-c56c-4f80-bc93-dc30a62fb2f1" />
-
-            
-  <img width="995" height="711" alt="image" src="https://github.com/user-attachments/assets/3020da60-3438-4d1c-966e-ef2898eed049" />
-
+  <p>          
+  <img width="1007" height="702" alt="image" width="49%" src="https://github.com/user-attachments/assets/7063cfd9-c56c-4f80-bc93-dc30a62fb2f1" />
+  <img width="995" height="711" alt="image"  width="49%" src="https://github.com/user-attachments/assets/3020da60-3438-4d1c-966e-ef2898eed049" />
+  </p>
             
 **골든 이미지 패키징 및 클라우드 최적화**: 
 Windows 10와 Linux(Ubuntu 22.04, CentOS 7) 골든 이미지를 virt-manager를 통해 구성했습니다.
