@@ -78,34 +78,34 @@ VM Pool을 통해 최종 Windows/Linux 데스크톱 환경을 제공합니다.
 </p>
             
 **골든 이미지 패키징 및 클라우드 최적화**: 
-Windows 10와 Linux(Ubuntu 22.04, CentOS 7) 골든 이미지를 virt-manager를 통해 구성했습니다.
+<br>Windows 10와 Linux(Ubuntu 22.04, CentOS 7) 골든 이미지를 virt-manager를 통해 구성했습니다.
   
 VM 생성 시 디스크 인터페이스를 VirtIO Block, 네트워크 어댑터를 VirtIO NIC로 사전 설정한 후 부팅했습니다. Windows 설치 과정에서 VirtIO 드라이버 ISO를 마운트하여 가상 디스크와 네트워크를 인식시켰으며, 설치 완료 후 cloudbase-init과 sysprep을 통해 사용자별 초기 설정(이름, 비밀번호)이 가능하도록 이미지를 일반화했습니다.
-최종적으로 qcow2 포맷으로 변환하여 클라우드 환경에 최적화된 이미지를 생성했고, C/C++ 컴파일러, 개발 라이브러리, 네트워크 분석 도구 등 학교 실습 도구를 사전 포함했습니다.
+<br>최종적으로 qcow2 포맷으로 변환하여 클라우드 환경에 최적화된 이미지를 생성했고, C/C++ 컴파일러, 개발 라이브러리, 네트워크 분석 도구 등 학교 실습 도구를 사전 포함했습니다.
 
 
 ## **⚙️ 기술 스택**
 
-- 클라우드 플랫폼 : OpenStack
-- 가상화 기술 : KVM  하이퍼바이저, VirtIO 반가상화, QEMU
-- 게스트 OS: Window 10, Linux(CentOS, Ubuntu)
-- 화면 송출 : Kasm
-- 저장소 : Cinder, Glance
+<br>- 클라우드 플랫폼 : OpenStack
+<br>- 가상화 기술 : KVM  하이퍼바이저, VirtIO 반가상화, QEMU
+<br>- 게스트 OS: Window 10, Linux(CentOS, Ubuntu)
+<br>- 화면 송출 : Kasm
+<br>- 저장소 : Cinder, Glance
 
 
 
 ## 📊 성과 및 결론
 <img width="565" height="317" alt="image" src="https://github.com/user-attachments/assets/44aa71c4-1eee-435a-aee6-8b75b767a9d5" />
 <br>
-웹 브라우저에서 Ubuntu(좌) / Windows 10(우) 인스턴스에 동시 접속 성공.
-OpenStack Neutron에서 할당한 사설 IP(192.168.0.x 대역)가
-가상 데스크톱 내부에서도 정확히 매핑되어 동작하는 것을 확인했다.
-별도 클라이언트 없이 HTML5 웹 브라우저만으로 접속하는 **Clientless DaaS** 구현 완료.
+웹 브라우저에서 Ubuntu(좌) / Windows 10(우) 인스턴스에 동시 접속 성공.<br>
+OpenStack Neutron에서 할당한 사설 IP(192.168.0.x 대역)가상 데스크톱 내부에서도 정확히 매핑되어 동작하는 것을 확인했다.<br>
+별도 클라이언트 없이 HTML5 웹 브라우저만으로 접속하는 **Clientless DaaS** 구현 완료.<br>
 
 
 <img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/36665a20-10a3-45f4-8499-e3f520cc8f0a" />
-- OpenStack Caracal 수동 설치를 통한 클라우드 인프라 구축 및 운영 경험
-- Windows/Linux 골든 이미지 제작 과정 습득 및 클라우드 이미지 최적화 기법 학습
-- 폐기 예정 서버 4대를 HCI 방식으로 재활용한 인프라 설계 경험
+<br>
+<br>- OpenStack Caracal 수동 설치를 통한 클라우드 인프라 구축 및 운영 경험
+<br>- Windows/Linux 골든 이미지 제작 과정 습득 및 클라우드 이미지 최적화 기법 학습
+<br>- 폐기 예정 서버 4대를 HCI 방식으로 재활용한 인프라 설계 경험
 
 
