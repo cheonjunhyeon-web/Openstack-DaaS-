@@ -41,7 +41,8 @@ VM Pool을 통해 최종 Windows/Linux 데스크톱 환경을 제공합니다.
 
 - 물리 인프라 구성
     
-    !스크린샷 2026-04-10 오후 5.11.36.png
+    <img width="610" height="406" alt="image" src="https://github.com/user-attachments/assets/2e5a75a0-5318-45f1-9d57-17cb9a040388" />
+
     
     - **물리 인프라 및 컴포넌트 구성**: 폐기 예정 서버 4대를 다음과 같이 구성했습니다.
         - **Controller Node (1대)**:
@@ -58,23 +59,29 @@ VM Pool을 통해 최종 Windows/Linux 데스크톱 환경을 제공합니다.
             - Cinder-Volume(블록 스토리지 제공)
         
         컨트롤러 노드의 사양을 변경하여 컴퓨트 기능을 통합함으로써 제한된 하드웨어로 최대 효율을 추출했습니다. Ubuntu 22.04 Live Server 기반 OpenStack Caracal을 수동 설치(manual installation) 방식으로 구성했습니다.
+      
         
-        - **3-Tier VPC 아키텍처 설계**:
-            - **[On-Demand Control]** : Kasm 웹 애플리케이션 서버를 배치하고, 사용자 인증 및 세션 관리를 담당합니다. 학생들은 이 계층을 통해 로그인하며, 관리자가 사전에 연결한 Windows/Linux 인스턴스 목록을 확인할 수 있습니다. Gateway를 통해 외부 인터넷과 내부 OpenStack API 계층을 연결합니다.
-            - **[OpenStack API]** : Controller Node에서 Horizon(웹 대시보드), Nova(컴퓨트), Keystone(인증), Neutron(네트워크), Cinder(스토리지) API를 제공하며, Compute Node 2대와 BlockStorage Node 1대를 관리합니다. Private Subnet으로 구성하여 외부 접근을 차단하고, On-Demand Control VPC와만 통신하도록 설계했습니다.
-            - **[DaaS Service]** : VM Pool을 통해 실제 Windows/Linux 데스크톱 인스턴스를 실행하는 계층입니다. Kasm 스트리밍 서버가 각 VM에 연결되어 웹 브라우저로 화면을 전송하며, RDP Server를 통해 원격 데스크톱 프로토콜을 처리합니다. User Data 저장소는 학생별 실습 데이터를 영구 보관합니다.
+- **3-Tier VPC 아키텍처 설계**:
+- **[On-Demand Control]** : Kasm 웹 애플리케이션 서버를 배치하고, 사용자 인증 및 세션 관리를 담당합니다. 학생들은 이 계층을 통해 로그인하며, 관리자가 사전에 연결한 Windows/Linux 인스턴스 목록을 확인할 수 있습니다. Gateway를 통해 외부 인터넷과 내부 OpenStack API 계층을 연결합니다.
+- 
+- **[OpenStack API]** : Controller Node에서 Horizon(웹 대시보드), Nova(컴퓨트), Keystone(인증), Neutron(네트워크), Cinder(스토리지) API를 제공하며, Compute Node 2대와 BlockStorage Node 1대를 관리합니다. Private Subnet으로 구성하여 외부 접근을 차단하고, On-Demand Control VPC와만 통신하도록 설계했습니다.
+- 
+- **[DaaS Service]** : VM Pool을 통해 실제 Windows/Linux 데스크톱 인스턴스를 실행하는 계층입니다. Kasm 스트리밍 서버가 각 VM에 연결되어 웹 브라우저로 화면을 전송하며, RDP Server를 통해 원격 데스크톱 프로토콜을 처리합니다. User Data 저장소는 학생별 실습 데이터를 영구 보관합니다.
             
-            이 구조는 사용자 접근 계층, 인프라 관리 계층, 서비스 제공 계층을 명확히 분리하여 보안성과 확장성을 확보했습니다.
+이 구조는 사용자 접근 계층, 인프라 관리 계층, 서비스 제공 계층을 명확히 분리하여 보안성과 확장성을 확보했습니다.
             
-        - **이미지 패키징 작업**
+- **이미지 패키징 작업**
             
             
-            !스크린샷 2026-04-10 오후 5.42.51.png
+  <img width="1007" height="702" alt="image" src="https://github.com/user-attachments/assets/7063cfd9-c56c-4f80-bc93-dc30a62fb2f1" />
+
             
-            !스크린샷 2026-04-10 오후 5.43.59.png
+  <img width="995" height="711" alt="image" src="https://github.com/user-attachments/assets/3020da60-3438-4d1c-966e-ef2898eed049" />
+
             
-            **골든 이미지 패키징 및 클라우드 최적화**: 
-            Windows 10와 Linux(Ubuntu 22.04, CentOS 7) 골든 이미지를 virt-manager를 통해 구성했습니다. 
-            VM 생성 시 디스크 인터페이스를 VirtIO Block, 네트워크 어댑터를 VirtIO NIC로 사전 설정한 후 부팅했습니다. Windows 설치 과정에서 VirtIO 드라이버 ISO를 마운트하여 가상 디스크와 네트워크를 인식시켰으며, 설치 완료 후 cloudbase-init과 sysprep을 통해 사용자별 초기 설정(이름, 비밀번호)이 가능하도록 이미지를 일반화했습니다.
-            최종적으로 qcow2 포맷으로 변환하여 클라우드 환경에 최적화된 이미지를 생성했고, C/C++ 컴파일러, 개발 라이브러리, 네트워크 분석 도구 등 학교 실습 도구를 사전 포함했습니다.
+**골든 이미지 패키징 및 클라우드 최적화**: 
+Windows 10와 Linux(Ubuntu 22.04, CentOS 7) 골든 이미지를 virt-manager를 통해 구성했습니다.
+  
+VM 생성 시 디스크 인터페이스를 VirtIO Block, 네트워크 어댑터를 VirtIO NIC로 사전 설정한 후 부팅했습니다. Windows 설치 과정에서 VirtIO 드라이버 ISO를 마운트하여 가상 디스크와 네트워크를 인식시켰으며, 설치 완료 후 cloudbase-init과 sysprep을 통해 사용자별 초기 설정(이름, 비밀번호)이 가능하도록 이미지를 일반화했습니다.
+최종적으로 qcow2 포맷으로 변환하여 클라우드 환경에 최적화된 이미지를 생성했고, C/C++ 컴파일러, 개발 라이브러리, 네트워크 분석 도구 등 학교 실습 도구를 사전 포함했습니다.
 
