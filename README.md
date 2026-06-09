@@ -97,7 +97,7 @@ VM 생성 시 디스크 인터페이스를 VirtIO Block, 네트워크 어댑터�
 ## 📊 성과 및 결론
 
 !Openstack을 활용한 DaaS 서비스 구축.jpg
-<img width="700" height="600" alt="image" src="https://github.com/user-attachments/assets/36665a20-10a3-45f4-8499-e3f520cc8f0a" />
+<img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/36665a20-10a3-45f4-8499-e3f520cc8f0a" />
 
 
 
