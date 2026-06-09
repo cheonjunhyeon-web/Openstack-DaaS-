@@ -96,6 +96,7 @@ VM 생성 시 디스크 인터페이스를 VirtIO Block, 네트워크 어댑터�
 
 ## 📊 성과 및 결론
 <img width="565" height="317" alt="image" src="https://github.com/user-attachments/assets/44aa71c4-1eee-435a-aee6-8b75b767a9d5" />
+<br>
 웹 브라우저에서 Ubuntu(좌) / Windows 10(우) 인스턴스에 동시 접속 성공.
 OpenStack Neutron에서 할당한 사설 IP(192.168.0.x 대역)가
 가상 데스크톱 내부에서도 정확히 매핑되어 동작하는 것을 확인했다.
