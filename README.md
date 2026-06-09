@@ -95,13 +95,14 @@ VM 생성 시 디스크 인터페이스를 VirtIO Block, 네트워크 어댑터�
 
 
 ## 📊 성과 및 결론
+<img width="565" height="317" alt="image" src="https://github.com/user-attachments/assets/44aa71c4-1eee-435a-aee6-8b75b767a9d5" />
+웹 브라우저에서 Ubuntu(좌) / Windows 10(우) 인스턴스에 동시 접속 성공.
+OpenStack Neutron에서 할당한 사설 IP(192.168.0.x 대역)가
+가상 데스크톱 내부에서도 정확히 매핑되어 동작하는 것을 확인했다.
+별도 클라이언트 없이 HTML5 웹 브라우저만으로 접속하는 **Clientless DaaS** 구현 완료.
 
-!Openstack을 활용한 DaaS 서비스 구축.jpg
+
 <img width="900" height="600" alt="image" src="https://github.com/user-attachments/assets/36665a20-10a3-45f4-8499-e3f520cc8f0a" />
-
-
-
-
 - OpenStack Caracal 수동 설치를 통한 클라우드 인프라 구축 및 운영 경험
 - Windows/Linux 골든 이미지 제작 과정 습득 및 클라우드 이미지 최적화 기법 학습
 - 폐기 예정 서버 4대를 HCI 방식으로 재활용한 인프라 설계 경험
