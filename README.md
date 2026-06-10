@@ -15,13 +15,13 @@
 [OpenStack 기반 DaaS 서비스 시스템 아키텍처]
 
 시스템은 3개 VPC로 구성되어 있습니다. 
-[On-Demand Control] 
+<br>[On-Demand Control] 
 Kasm 웹 인터페이스를 통해 사용자 진입점을 제공
 
-[OpenStack API] 
+<br>[OpenStack API] 
 Controller Node(Horizon, Nova, Keystone), Compute Node, BlockStorage Node로 가상화 인프라를 관리 
 
-[DaaS Service] 
+<br>[DaaS Service] 
 VM Pool을 통해 최종 Windows/Linux 데스크톱 환경을 제공합니다.
 
 핵심은 기존 OpenStack이 CLI/API를 통한 기술적 접근만 제공했던 것과 달리, 학생들이 웹 브라우저에서 로그인 후 클릭 한 번으로 자신의 데스크톱을 실행할 수 있다는 점입니다. 복잡한 인스턴스 생성, 네트워크 설정, 볼륨 연결 과정을 완전히 추상화하여 일반 사용자도 쉽게 접근할 수 있게 만들었습니다. Nova Compute가 Hypervisor를 관리하며, Neutron Agent가 가상 네트워크 구성을 담당합니다.
